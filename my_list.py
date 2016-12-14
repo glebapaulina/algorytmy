@@ -28,6 +28,7 @@ class LinkedList:
             current = current.next
         return None
 
+    #dlugosc listy
     def __len__(self):
         current = self.head
         count = 0
@@ -36,6 +37,7 @@ class LinkedList:
             count += 1
         return count
 
+    #zliczanie wystapienia elemnetu
     def count(self, data):
         current = self.head
         count = 0
@@ -45,6 +47,7 @@ class LinkedList:
             current = current.next
         return count
 
+    #dodawanie na koncu listy
     def append(self, new_node):
         new_node = Node(new_node)
         if self.head is None:
@@ -53,6 +56,7 @@ class LinkedList:
             self.tail.next = new_node
         self.tail = new_node
 
+    #wyszukiwanie elementu
     def search(self, data):
         current = self.head
         while current is not None:
@@ -60,7 +64,8 @@ class LinkedList:
                 return current
             current = current.next
         return None
-
+    
+    #wyswietlanie listy
     def show(self):
         current = self.head
         lista = []
@@ -69,6 +74,7 @@ class LinkedList:
             current = current.next
         return lista
 
+    #wstawianie po elemencie
     def insert_after(self, new_node, node):
         current = self.head
         if node is None:
@@ -88,6 +94,7 @@ class LinkedList:
 # l.insert_after(8,3)
 # assert l.show() == [1, 2, 3, 8, 4]
 
+    #wstawianie z sortowaniem
     def insert_sorted(self, node):
         current = self.head
         node = Node(node)
@@ -103,6 +110,7 @@ class LinkedList:
 # l.insert_sorted(4)
 # print(l.show())
 
+    #odwracanie listy
     def reverse(self):
         prev = None
         current = self.head
