@@ -22,11 +22,14 @@ class RozdzielniaTriage:
         # przyjmij pacjenta do rodzielni
         self.kolejka.put(etykieta, plec)
 
-    def ewakuuj(self, liczba_pacjentow):
+   def ewakuuj(self, liczba_pacjentow):
         # zwróć tablicę pacjentów do transportu (o najwyższym priorytecie)
         # i usun ich z rozdzielni
-
-        return self.kolejka.get(liczba_pacjentow)
+        tab = []
+        for i in range(liczba_pacjentow):
+            poszkodowany = self.kolejka.get()
+            tab.append(poszkodowany)
+        return tab
 
     def liczba_poszkodowanych(self):
         # zwroc liczbę pacjentów oczekujących w rodzielni
