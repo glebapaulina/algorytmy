@@ -25,9 +25,6 @@ class MaxHeap:
                     return False
         return True
 
-    # def swap(self, left, right):
-    #     self[left], self[right] = self[right], self[left]
-
     def shift_up(self, i):
         parent = (i//2)-1
         while i > 0 and self.data[parent] < self.data[i]:
