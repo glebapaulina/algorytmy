@@ -4,7 +4,7 @@ def merge(left, right, compare):
     result = []
     i, j = 0, 0
     while i < len(left) and j < len(right):
-        if compare(abs(left[i]), abs(right[j])):
+        if compare(left[i], right[j]):
             result.append(left[i])
             i += 1
         else:
@@ -27,6 +27,8 @@ def merge_sort(L, compare=operator.lt):
         left = merge_sort(L[:middle], compare)
         right = merge_sort(L[middle:], compare)
         return merge(left, right, compare)
+    
+def porownaj(a,b):
+    return abs(a)< abs(b)
 
-
-print(merge_sort([1, -5, 8, 3, -2, -4]))
+print(merge_sort([1, -5, 8, 3, -2, -4], porownaj))
